@@ -16,7 +16,7 @@ export default function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/users"); // GET API
+      const response = await axios.get("https://propmath-crud.onrender.com/users"); // GET API
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -41,7 +41,7 @@ export default function App() {
 
   const handleDelete = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${userId}`); // DELETE API
+      await axios.delete(`https://propmath-crud.onrender.com/users/${userId}`); // DELETE API
       fetchData();
     } catch (error) {
       console.error("Error deleting user:", error);
@@ -57,10 +57,10 @@ export default function App() {
     e.preventDefault();
     try {
       if (isNewUser) {
-        await axios.post("http://localhost:5000/users", editedUser);  // POST API (CREATE)
+        await axios.post("https://propmath-crud.onrender.com/users", editedUser);  // POST API (CREATE)
       } else if (modalType === "edit") {
         await axios.put(
-          `http://localhost:5000/users/${selectedUser._id}`,       // PUT API (UPDATE)
+          `https://propmath-crud.onrender.com/${selectedUser._id}`,       // PUT API (UPDATE)
           editedUser 
         );
       }
