@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors())
 
+// Connecting to Database
 mongoose
   .connect( process.env.MOBGO_URI ||
     "mongodb+srv://vpyasi11:Vishu%401196@clusterchandramani.nbqzn3w.mongodb.net/crud_app"
@@ -19,8 +20,9 @@ mongoose
     console.error("Error connecting to MongoDB:", error);
   });
 
-
 app.use("/users", userRoutes);
+
+// Starting the server
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
