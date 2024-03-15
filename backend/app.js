@@ -10,7 +10,7 @@ app.use(cors())
 
 // Connecting to Database
 mongoose
-  .connect( process.env.MOBGO_URI ||
+  .connect( process.env.MONGO_URI ||
     "mongodb+srv://vpyasi11:Vishu%401196@clusterchandramani.nbqzn3w.mongodb.net/crud_app"
   )
   .then(() => {

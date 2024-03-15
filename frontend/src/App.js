@@ -60,7 +60,7 @@ export default function App() {
         await axios.post("https://propmath-crud.onrender.com/users", editedUser);  // POST API (CREATE)
       } else if (modalType === "edit") {
         await axios.put(
-          `https://propmath-crud.onrender.com/${selectedUser._id}`,       // PUT API (UPDATE)
+          `https://propmath-crud.onrender.com/users/${selectedUser._id}`,       // PUT API (UPDATE)
           editedUser 
         );
       }
